@@ -106,7 +106,7 @@ I am documenting my learning process here. If you
 spot errors or have better approaches, please let
 me know.
 
-![Settling in for a focused development session.](media/images/placeholder-coffee-02.jpg){.img-fluid width=30% fig-align="center"}
+![Settling in for a focused development session.](media/images/ambiance1.png){.img-fluid width=30% fig-align="center"}
 
 *Settling in for a focused development session.*
 
