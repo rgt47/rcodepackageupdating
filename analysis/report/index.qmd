@@ -1,8 +1,6 @@
 ---
 title: "Updating an R Package: A Complete
   Development Workflow"
-subtitle: "From code changes to CI/CD integration
-  using Git, devtools, and GitHub Actions"
 author: "Ronald 'Ryy' G. Thomas"
 date: "2026-02-11"
 categories: [r, package-development, git]
@@ -27,7 +25,7 @@ format:
 
 ![Terminal showing an R package build in
 progress](media/images/hero.png){.img-fluid
-width=80%}
+width=80% fig-align="center"}
 
 *Setting up a reproducible R package development
 workflow.*
