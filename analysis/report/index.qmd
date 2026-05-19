@@ -42,12 +42,11 @@ documenting, testing, building, and integrating
 with GitHub Actions is what separates a quick fix
 from a reliable contribution.
 
-The scenario is straightforward: you have an
-existing R package hosted on GitHub, and you need
-to add a feature, fix a bug, or improve error
-handling. The change itself might be small, but
-the process of getting it safely merged involves
-a surprising number of steps.
+The scenario is straightforward: an existing R package
+is hosted on GitHub and a feature must be added, a bug
+fixed, or error handling improved. The change itself
+might be small, but the process of getting it safely
+merged involves a surprising number of steps.
 
 This post documents the complete workflow I
 learned while modifying my own package,
@@ -100,9 +99,9 @@ which is the how-to-author-one entry point.
    review, address CI failures, merge, and clean
    up.
 
-I am documenting my learning process here. If you
-spot errors or have better approaches, please let
-me know.
+I am documenting my learning process here. Errors
+and better approaches are welcome; see the contact
+section.
 
 ![Settling in for a focused development session.](media/images/ambiance1.png){.img-fluid width=30% fig-align="center"}
 
@@ -121,8 +120,8 @@ install.packages(
 )
 ```
 
-You also need Git configured on your system and
-SSH or HTTPS access to your GitHub repositories.
+Git should also be configured on the system with
+SSH or HTTPS access to GitHub repositories.
 The examples below use a package called
 `zzdataframe2graphic`, but the process applies to
 any R package hosted on GitHub.
@@ -134,10 +133,10 @@ sequence of steps that takes a code change from
 an idea to a tested, documented, and merged
 contribution. Think of it as a checklist for
 responsible software modification: rather than
-editing a file and hoping for the best, you
-create an isolated branch, update documentation
-automatically, run tests on multiple platforms,
-and only merge when everything passes.
+editing a file and hoping for the best, one creates
+an isolated branch, updates documentation
+automatically, runs tests on multiple platforms,
+and merges only when everything passes.
 
 The key tools in this workflow are `devtools`
 (which orchestrates building, testing, and
@@ -152,8 +151,7 @@ production.
 # Getting Started: Creating a Feature Branch
 
 Every change begins with a new branch. This keeps
-the main branch stable while you work on your
-modification.
+the main branch stable during development.
 
 ```bash
 git checkout main
@@ -161,12 +159,11 @@ git pull origin main
 git checkout -b feature-name
 ```
 
-The first two commands ensure you are starting
-from the latest version of the codebase. The
-third creates a new branch and switches to it.
-All subsequent changes happen on this branch,
-isolated from `main` until you are ready to
-merge.
+The first two commands ensure work starts from the
+latest version of the codebase. The third creates
+a new branch and switches to it. All subsequent
+changes happen on this branch, isolated from `main`
+until the work is ready to merge.
 
 ## Editing the R Code
 
@@ -188,11 +185,11 @@ After editing, regenerate the documentation:
 devtools::document()
 ```
 
-This command reads your roxygen2 comments and
+This command reads the roxygen2 comments and
 updates the `NAMESPACE` file and the `man/`
 directory. It is important to run this every time
-you change function signatures, add parameters,
-or modify exported functions.
+function signatures change, parameters are added,
+or exported functions are modified.
 
 ![Code review on a laptop
 screen](media/images/ambiance2.png){.img-fluid}
@@ -213,7 +210,7 @@ test_that("new feature works as expected", {
 })
 ```
 
-Add your test cases to the appropriate file in
+Add test cases to the appropriate file in
 `tests/testthat/`. Then run the full test suite
 locally:
 
@@ -310,9 +307,9 @@ Then create a pull request on GitHub:
 
 ## GitHub Actions: Automated CI/CD
 
-GitHub Actions automate the testing process every
-time you push or open a pull request. A typical R
-package uses three workflows:
+GitHub Actions automate the testing process on every
+push or pull request. A typical R package uses three
+workflows:
 
 **R-CMD-check** runs `R CMD check` across
 multiple operating systems:
@@ -620,17 +617,16 @@ workflow once, even for a small package, and then
 follow it consistently. The steps become
 automatic after a few iterations.
 
-Main takeaways:
-
-- Always branch before making changes, and keep
-  each branch focused on a single feature or fix.
-- Run `devtools::document()`, `devtools::test()`,
-  and `devtools::check()` locally before pushing.
-- Set up R-CMD-check, test coverage, and pkgdown
-  GitHub Actions workflows using the templates
-  from `r-lib/actions`.
-- Treat the pull request as both a merge
-  mechanism and a documentation record.
+In conclusion, four points merit emphasis. First,
+always branch before making changes and keep each
+branch focused on a single feature or fix. Second,
+run `devtools::document()`, `devtools::test()`, and
+`devtools::check()` locally before pushing. Third,
+set up R-CMD-check, test coverage, and pkgdown GitHub
+Actions workflows using the templates from
+`r-lib/actions`. Fourth, treat the pull request as
+both a merge mechanism and a documentation record of
+what changed and why.
 
 # See Also
 
@@ -644,46 +640,45 @@ Main takeaways:
 ### Key Resources
 
 - [R Packages (2e)](https://r-pkgs.org/) by
-  Hadley Wickham and Jenny Bryan -- the
-  definitive guide to R package development
-- [Pro Git Book](https://git-scm.com/book/en/v2)
-  -- comprehensive guide to Git fundamentals
+  Hadley Wickham and Jenny Bryan: the definitive
+  guide to R package development
+- [Pro Git Book](https://git-scm.com/book/en/v2):
+  comprehensive guide to Git fundamentals
 - [GitHub Actions for
-  R](https://github.com/r-lib/actions) --
+  R](https://github.com/r-lib/actions):
   r-lib's collection of workflow templates
 - [testthat
-  documentation](https://testthat.r-lib.org/) --
+  documentation](https://testthat.r-lib.org/):
   the standard testing framework for R
 - [devtools
-  documentation](https://devtools.r-lib.org/) --
+  documentation](https://devtools.r-lib.org/):
   comprehensive guide to the devtools package
 - [Writing R
-  Extensions](https://cran.r-project.org/doc/manuals/r-release/R-exts.html)
-  -- the official R manual for package
-  development
+  Extensions](https://cran.r-project.org/doc/manuals/r-release/R-exts.html):
+  the official R manual for package development
 - [roxygen2
-  documentation](https://roxygen2.r-lib.org/) --
+  documentation](https://roxygen2.r-lib.org/):
   inline documentation system for R
 - [pkgdown
-  documentation](https://pkgdown.r-lib.org/) --
+  documentation](https://pkgdown.r-lib.org/):
   building package documentation websites
 - [covr
-  documentation](https://covr.r-lib.org/) --
+  documentation](https://covr.r-lib.org/):
   understanding test coverage in R
 - [GitHub Actions
-  Documentation](https://docs.github.com/en/actions)
-  -- official reference for CI/CD workflows
+  Documentation](https://docs.github.com/en/actions):
+  official reference for CI/CD workflows
 - [GitHub
-  Skills](https://skills.github.com/) --
+  Skills](https://skills.github.com/):
   interactive courses for learning GitHub
 - [Oh Shit,
-  Git!?!](https://ohshitgit.com/) -- practical
+  Git!?!](https://ohshitgit.com/): practical
   solutions for common Git mistakes
 
 # Reproducibility
 
 This post describes a workflow rather than an
-analysis pipeline. To follow along, you need:
+analysis pipeline. To follow along, one will need:
 
 - R 4.4 or later
 - Git 2.30 or later
@@ -729,11 +724,10 @@ sessionInfo()
 
 I would enjoy hearing from you if:
 
-- You spot an error or a better approach to any of the
-  code in this post.
-- You have suggestions for topics you would like to see
-  covered.
-- You want to discuss R programming, data science, or
-  reproducible research.
-- You have questions about anything in this tutorial.
-- You just want to say hello and connect.
+- An error or a better approach to any of the code
+  in this post comes to mind.
+- There are suggestions for topics to see covered.
+- The interest is in discussing R programming, data
+  science, or reproducible research.
+- There are questions about anything in this tutorial.
+- The goal is simply to say hello and connect.
