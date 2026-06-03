@@ -10,7 +10,7 @@ description: >
   a feature branch through CI/CD and watch it
   either pass or fail on three operating systems.
   This post walks through the entire process.
-image: "media/images/hero.jpg"
+image: "media/images/hero.png"
 document-type: "blog"
 draft: false
 execute:
