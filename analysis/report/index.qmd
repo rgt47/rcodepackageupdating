@@ -12,7 +12,7 @@ description: >
   This post walks through the entire process.
 image: "media/images/hero.png"
 document-type: "blog"
-draft: false
+draft: true
 execute:
   echo: true
   warning: false
@@ -495,7 +495,7 @@ remove.packages(c(
 ```
 
 ![Books and notes on a research
-desk](media/images/ambiance3.jpg){.img-fluid}
+desk](media/images/ambiance3.png){.img-fluid}
 
 *Reflecting on the lessons from a full development
 cycle.*
