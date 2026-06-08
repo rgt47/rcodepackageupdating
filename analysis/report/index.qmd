@@ -1,7 +1,7 @@
 ---
 title: "Updating an R Package: A Complete
   Development Workflow"
-author: "Ronald 'Ryy' G. Thomas"
+author: "Ronald G. Thomas"
 date: "2026-02-11"
 categories: [r, package-development, git]
 description: >
