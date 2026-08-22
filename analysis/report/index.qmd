@@ -48,14 +48,14 @@ covered, with the goal of making the process
 repeatable for future changes.
 
 More formally, this post documents the R-packages layer
-(Layer 13) of the Workflow Construct described in
-[post 52](/posts/52-workflow-construct/), specifically the
-maintenance loop that keeps an existing package healthy
-across a working biostatistician's many simultaneous
-projects. The construct's R-packages layer holds a small set
-of author-maintained `zz*` packages; this post is the
-how-to-update-one companion to [post 35](/posts/35-simpleS3/),
-which is the how-to-author-one entry point.
+of the Workflow Construct described in
+[post 15](/posts/15-wf-construct-overview-anchor/),
+specifically the maintenance loop that keeps an existing
+package healthy across a working biostatistician's many
+simultaneous projects. The construct's R-packages layer
+holds a small set of author-maintained `zz*` packages;
+this post covers how to update one of them, not how to
+author a new package from scratch.
 
 ## Motivations
 
@@ -273,7 +273,7 @@ Review the staged changes with `git status`, then
 commit with a descriptive message:
 
 ```bash
-git commit -m "feat: add error handling to
+git commit -m "Add error handling to
   zzdataframe2graphic
 
 - Added input validation for data frame columns
@@ -356,7 +356,7 @@ If any workflow fails after pushing:
 
 ```bash
 git add .
-git commit -m "fix: address CI failures"
+git commit -m "Address CI failures"
 git push origin feature-name
 ```
 
@@ -624,10 +624,8 @@ what changed and why.
 
 ### Related Posts
 
-- [Configure the Command Line for Data Science
-  Development](../01-configtermzsh/configtermzsh/analysis/report/)
-- [Setting Up Git for Data Science
-  Projects](../02-githubarchive/githubarchive/analysis/report/)
+- [Unix Command-Line Workspace Setup for Data Science](../wf-unix-workspace-config/)
+- [Setting Up Git for Data Science Workflows](../wf-git-for-data-science/)
 
 ### Key Resources
 
@@ -694,7 +692,7 @@ devtools::check()
 
 ```bash
 git add <specific-files>
-git commit -m "feat: description of change"
+git commit -m "Describe the change here"
 git push origin feature-name
 # Open PR on GitHub, wait for Actions, merge
 git checkout main && git pull origin main
