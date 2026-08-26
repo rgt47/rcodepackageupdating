@@ -15,8 +15,11 @@ cluster: r-packages
 cluster-order: 1
 ---
 
-![Terminal showing an R package build in
-progress](media/images/hero.png){.img-fluid
+![Three identical brass locks on a wooden board, two
+marked with a green paint dot and one with a red dot:
+the same change tested across three operating systems,
+passing on some and failing on
+another](media/images/hero.jpg){.img-fluid
 width=80% fig-align="center"}
 
 *Setting up a reproducible R package development
@@ -183,8 +186,9 @@ directory. It is important to run this every time
 function signatures change, parameters are added,
 or exported functions are modified.
 
-![Code review on a laptop
-screen](media/images/ambiance2.png){.img-fluid height=3.5in}
+![An open notebook with a hand-drawn flowchart, red ink
+circling two boxes: reviewing a change before it
+ships](media/images/ambiance2.jpg){.img-fluid height=3.5in}
 
 *Taking a step back to review the changes before
 testing.*
