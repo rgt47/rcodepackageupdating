@@ -6,7 +6,7 @@ categories: [r, package-development, git]
 description: "I did not really understand the full lifecycle of modifying an R package until I had to push a feature branch through CI/CD and watch it either pass or fail on three operating systems. This post walks through the entire process."
 image: "media/images/hero.png"
 document-type: "blog"
-draft: true
+draft: false
 execute:
   echo: true
   warning: false
